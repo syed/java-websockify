@@ -11,8 +11,8 @@ public class WSServer {
         server.createContext("/websockify", new WsHandler());
         server.start();*/
 
-        Server server = new Server(8000);
-        WebSocketHandler wsHandler = new WsHandler();
+        Server server = new Server(8181);
+        WebSocketHandler wsHandler = new WsHandlerWithAuth();
 
         server.setHandler(wsHandler);
         server.start();

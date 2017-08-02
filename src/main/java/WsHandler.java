@@ -23,6 +23,11 @@ public class WsHandler extends WebSocketHandler {
     int vncPort = 5900;
     String vncPassword = "password";
 
+    enum clientState {
+        INIT, SERVER_VERSION_SENT, CLIENT_VERSION_RECIEVED, AUTH_TYPES_SENT,
+    }
+
+
     @Override
     public void configure(WebSocketServletFactory webSocketServletFactory) {
         webSocketServletFactory.register(WsHandler.class);
